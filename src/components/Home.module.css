@@ -6,82 +6,120 @@
 .heroCard {
   background-color: whitesmoke;
   border-radius: 30px;
-  padding: 80px 40px; /* Thodi padding barha di hai kyunki ab content kam hai */
+  padding: 80px 20px;
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Content ko center mein rakhne ke liye */
+  justify-content: center;
   align-items: center;
-  min-height: 70vh; /* Height thodi kam kar di kyunki ab niche jagah chahiye About ke liye */
+  min-height: 70vh;
   position: relative;
+  text-align: center;
+  overflow: hidden; /* Mobile overflow control */
 }
 
 /* --- Main Headings --- */
 .mainTitle {
-  font-size: clamp(3rem, 15vw, 11rem);
+  /* iPhone X aur mini devices ke liye 2.8rem se start kiya hai */
+  font-size: clamp(2.8rem, 12vw, 11rem);
   font-weight: 900;
-  text-align: center;
   margin: 0;
-  letter-spacing: -5px;
-  line-height: 0.8;
+  letter-spacing: -2px; 
+  line-height: 0.85;
   font-family: "Open Sans", sans-serif;
   color: #1a1a1a;
+  width: 100%;
 }
 
 .subHeader {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 20px;
-  margin-top: 10px;
+  gap: 15px;
+  margin-top: 15px;
   width: 100%;
+  flex-wrap: nowrap; /* Line aur text ko sath rakhne ke liye */
 }
 
+/* Line Fix: Taaki choti screen par gayab na ho */
 .line {
-  height: 4px;
+  height: 3px;
   background-color: #1a1a1a;
-  flex-grow: 0.1; /* Line ko thoda chota rakha hai minimal look ke liye */
-  max-width: 200px;
+  flex-shrink: 0; /* Isse line squeeze nahi hogi */
+  width: 15%; 
+  min-width: 30px; /* Software ke sath wali line hamesha dikhegi */
 }
 
 .devTitle {
-  font-size: clamp(2rem, 10vw, 7rem);
+  font-size: clamp(1.4rem, 7vw, 7rem);
   font-weight: 800;
   margin: 0;
-  letter-spacing: -2px;
+  letter-spacing: -1px;
   font-family: "Edu AU VIC WA NT Arrows", cursive;
   color: #1a1a1a;
+  white-space: nowrap;
 }
 
-/* --- Skill Bar --- */
+/* --- Skill Bar: Dots on Left Alignment --- */
 .skillBar {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 15px;
-  margin-top: 35px;
+  gap: 25px;
+  margin-top: 40px;
   color: #888;
-  font-weight: 500;
-  font-size: 1.1rem;
-  flex-wrap: wrap;
+  flex-wrap: wrap; /* Mobiles par items automatically adjust honge */
+  width: 100%;
+}
+
+.skillItem {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Dot aur Text ke darmiyan gap */
   font-family: "Cinzel", serif;
+  font-weight: 600;
+  font-size: clamp(0.75rem, 2vw, 1.1rem);
 }
 
 .dot {
-  width: 6px;
-  height: 6px;
+  width: 7px;
+  height: 7px;
   background-color: #ccc;
   border-radius: 50%;
+  flex-shrink: 0; /* Dot ko gol rehne dega, dabne nahi dega */
 }
 
-/* --- MOBILE RESPONSIVE --- */
-@media (max-width: 768px) {
+/* --- Specific Fix for iPhone X, SE & Small Mobiles --- */
+@media (max-width: 480px) {
   .heroCard {
-    padding: 60px 20px;
-    min-height: 50vh;
+    padding: 50px 15px;
+    border-radius: 20px;
+    min-height: 55vh;
   }
-  
+
+  .mainTitle {
+    letter-spacing: -1px; /* Mobile par clean look ke liye */
+    line-height: 1;
+  }
+
+  .subHeader {
+    gap: 8px; /* Choti screen par gap kam */
+  }
+
+  .line {
+    height: 2px;
+    min-width: 25px; /* Mazeed choti screen par bhi line dikhegi */
+  }
+
   .skillBar {
-    font-size: 0.9rem;
-    gap: 10px;
+    gap: 15px;
+    margin-top: 30px;
+  }
+}
+
+/* Landscape Mode Fix */
+@media (max-height: 500px) {
+  .heroCard {
+    min-height: 100vh;
+    padding: 40px 20px;
   }
 }
