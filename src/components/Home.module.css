@@ -1,0 +1,87 @@
+.heroWrapper {
+  padding: 0 5% 20px 5%;
+  background-color: white;
+}
+
+.heroCard {
+  background-color: whitesmoke;
+  border-radius: 30px;
+  padding: 80px 40px; /* Thodi padding barha di hai kyunki ab content kam hai */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Content ko center mein rakhne ke liye */
+  align-items: center;
+  min-height: 70vh; /* Height thodi kam kar di kyunki ab niche jagah chahiye About ke liye */
+  position: relative;
+}
+
+/* --- Main Headings --- */
+.mainTitle {
+  font-size: clamp(3rem, 15vw, 11rem);
+  font-weight: 900;
+  text-align: center;
+  margin: 0;
+  letter-spacing: -5px;
+  line-height: 0.8;
+  font-family: "Open Sans", sans-serif;
+  color: #1a1a1a;
+}
+
+.subHeader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 10px;
+  width: 100%;
+}
+
+.line {
+  height: 4px;
+  background-color: #1a1a1a;
+  flex-grow: 0.1; /* Line ko thoda chota rakha hai minimal look ke liye */
+  max-width: 200px;
+}
+
+.devTitle {
+  font-size: clamp(2rem, 10vw, 7rem);
+  font-weight: 800;
+  margin: 0;
+  letter-spacing: -2px;
+  font-family: "Edu AU VIC WA NT Arrows", cursive;
+  color: #1a1a1a;
+}
+
+/* --- Skill Bar --- */
+.skillBar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-top: 35px;
+  color: #888;
+  font-weight: 500;
+  font-size: 1.1rem;
+  flex-wrap: wrap;
+  font-family: "Cinzel", serif;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  background-color: #ccc;
+  border-radius: 50%;
+}
+
+/* --- MOBILE RESPONSIVE --- */
+@media (max-width: 768px) {
+  .heroCard {
+    padding: 60px 20px;
+    min-height: 50vh;
+  }
+  
+  .skillBar {
+    font-size: 0.9rem;
+    gap: 10px;
+  }
+}
