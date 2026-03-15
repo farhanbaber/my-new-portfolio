@@ -1,24 +1,12 @@
 import styles from './Resume.module.css';
-import { FaGraduationCap, FaCalendarAlt, FaHtml5, FaCss3Alt, FaJs, FaReact, FaNodeJs, FaGithub, FaGitAlt, FaDatabase } from 'react-icons/fa';
-import { SiMongodb, SiTypescript, SiBootstrap, SiTailwindcss, SiExpress, SiFirebase } from 'react-icons/si';
+import { FaGraduationCap, FaCalendarAlt, FaHtml5, FaCss3Alt, FaJs, FaReact, FaNodeJs, FaGithub, FaGitAlt, FaDatabase, FaDownload } from 'react-icons/fa';
+import { SiMongodb, SiTypescript, SiBootstrap, SiExpress, SiFirebase } from 'react-icons/si';
 
 const Resume = () => {
   const education = [
-    { 
-      date: "2010 - 2025", 
-      title: "Matriculation", 
-      desc: "Completed Matriculation with a strong focus on science and logical reasoning, laying the foundation for technical studies." 
-    },
-    { 
-      date: "2025 - 2027", 
-      title: "FSC - Pre-Engineering", 
-      desc: "Currently pursuing Pre-Engineering to strengthen mathematical and analytical skills for advanced computing." 
-    },
-    { 
-      date: "2025 - 2026", 
-      title: "Full Stack Development (SMIT)", 
-      desc: "Completed intensive Full Stack Development training at Saylani Mass IT Consulting, mastering modern web technologies." 
-    }
+    { date: "2010 - 2025", title: "Matriculation", desc: "Completed Matriculation with a strong focus on science and logical reasoning." },
+    { date: "2025 - 2027", title: "FSC - Pre-Engineering", desc: "Currently pursuing Pre-Engineering to strengthen analytical skills." },
+    { date: "2025 - 2026", title: "Full Stack Development (SMIT)", desc: "Completed intensive MERN Stack training at Saylani Mass IT Consulting." }
   ];
 
   const skillsList = [
@@ -27,31 +15,27 @@ const Resume = () => {
     { name: "JavaScript", icon: <FaJs style={{color: '#F7DF1E'}} /> },
     { name: "React", icon: <FaReact style={{color: '#61DAFB'}} /> },
     { name: "Node.js", icon: <FaNodeJs style={{color: '#339933'}} /> },
+    { name: "Firebase", icon: <SiFirebase style={{color: '#FFCA28'}} /> },
     { name: "MongoDB", icon: <SiMongodb style={{color: '#47A248'}} /> },
     { name: "Express", icon: <SiExpress style={{color: '#000000'}} /> },
-    { name: "Firebase", icon: <SiFirebase style={{color: '#FFCA28'}} /> }, // PHP ki jaga Firebase
-    { name: "TypeScript", icon: <SiTypescript style={{color: '#3178C6'}} /> },
-    { name: "Bootstrap", icon: <SiBootstrap style={{color: '#7952B3'}} /> },
-    { name: "GitHub", icon: <FaGithub style={{color: '#181717'}} /> }, // WordPress ki jaga GitHub
-    { name: "Git", icon: <FaGitAlt style={{color: '#F05032'}} /> },
-    { name: "MySQL", icon: <FaDatabase style={{color: '#4479A1'}} /> },
+    { name: "GitHub", icon: <FaGithub style={{color: '#181717'}} /> },
+    { name: "Git", icon: <FaGitAlt style={{color: '#F05032'}} /> }
   ];
 
   return (
     <section className={styles.resumeSection}>
       <div className={styles.noiseOverlay}></div>
-
       <div className={styles.container}>
         <h2 className={styles.mainTitle}>Professional <span>Resume</span></h2>
         
         <div className={styles.educationWrapper}>
-          <h3 className={styles.columnHeader}><FaGraduationCap /> Academic & Professional Training</h3>
+          <h3 className={styles.columnHeader}><FaGraduationCap /> Academic Training</h3>
           <div className={styles.timeline}>
             {education.map((item, index) => (
               <div key={index} className={styles.cardWrapper}>
                 <div className={styles.dot}></div>
                 <div className={styles.card}>
-                  <div className={styles.dateTag}><FaCalendarAlt /> {item.date}</div>
+                  <span className={styles.dateTag}><FaCalendarAlt /> {item.date}</span>
                   <h4>{item.title}</h4>
                   <p>{item.desc}</p>
                 </div>
@@ -70,6 +54,13 @@ const Resume = () => {
               </div>
             ))}
           </div>
+        </div>
+
+        <div className={styles.buttonFullCenter}>
+          <a href="/cv.pdf" download="Farhan_Baber_CV.pdf" className={styles.exploreBtn}>
+            DOWNLOAD CV <FaDownload style={{marginLeft: '10px'}} />
+            <div className={styles.outerBorder}></div>
+          </a>
         </div>
       </div>
     </section>
