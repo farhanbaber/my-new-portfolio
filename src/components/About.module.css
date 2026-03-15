@@ -1,325 +1,47 @@
+/* --- About Section Main Layout --- */
 .aboutSection {
   background-color: #ffffff;
-  padding: 100px 5%;
+  padding: 80px 5%;
   min-height: 100vh;
   display: flex;
-  flex-direction: column; /* Takay button neechay center mein aaye */
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  overflow-x: hidden; /* Screen se bahar kuch nahi jayega */
 }
 
 .container {
   max-width: 1200px;
   display: flex;
   align-items: center;
-  gap: 70px;
+  gap: 60px;
   width: 100%;
 }
 
-/* --- Image Side & Name/Badge Centering --- */
+/* --- Image Side: Responsive Frame --- */
 .imageSide {
   display: flex;
   flex-direction: column;
-  align-items: center; /* Center Name and Badge under Image */
-}
-
-.imageFrame {
-  width: 360px;
-  height: 460px;
-  border: 1px solid #ddd;
-  padding: 8px;
-  background: #fff;
-  border-radius: 1px; /* Subtle radius */
-}
-
-.profileImg {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 10px; /* Match the frame's radius */
-}
-
-.nameBadgeWrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* Explicitly center name and status */
-  text-align: center;
-  margin-top: 15px;
-}
-
-.userName {
-  font-size: 1.4rem;
-  font-weight: 800;
-  color: #1a1a1a;
-  margin: 0;
-    font-family: "Cinzel", serif;
-
-}
-
-/* --- Status Badge Fix --- */
-.statusBadge {
-  margin-top: 10px;
-  display: inline-flex;
   align-items: center;
-  gap: 10px;
-  padding: 6px 15px;
-  border: 1px solid #eee;
-  border-radius: 50px;
-  font-size: 0.75rem;
-  color: #888;
-    font-family: "Cinzel", serif;
-
+  flex-shrink: 0;
 }
 
-.pulseContainer { position: relative; display: flex; align-items: center; }
-.greenDot { width: 8px; height: 8px; background-color: #00ff00; border-radius: 50%; }
-.bubble {
-  position: absolute;
-  width: 8px; height: 8px;
-  border: 2px solid #00ff00;
-  border-radius: 50%;
-  animation: statusPulse 2s infinite ease-out;
-}
-
-@keyframes statusPulse {
-  0% { transform: scale(1); opacity: 1; }
-  100% { transform: scale(4); opacity: 0; }
-}
-
-/* --- Content Side --- */
-.introHeading {
-  font-size: 2.4rem; /* Size balanced */
-  font-weight: 590;
-  line-height: 1.4;
-font-family: "Syne", sans-serif;
-
-}
-
-.skillBox {
-  display: inline-block;
-  border: 1px solid #d5d3d36c;
-  padding: 2px 10px;
-  border-radius: 2px;
-  font-size: 0.85em;
-    font-family: "Edu AU VIC WA NT Arrows", cursive;
-
-
-}
-
-.description {
-  font-size: 1.1rem;
-  color: #888;
-  margin-top: 15px;
-    font-family: "Cinzel", serif;
-
-}
-
-/* --- Social Icons (1px Radius) --- */
-.socialWrapper { display: flex; gap: 12px; margin: 25px 0; }
-.iconBox {
-  width: 42px; height: 42px;
-  display: flex; justify-content: center; align-items: center;
-  border-radius: 1px; /* Fixed 1px Radius */
-  background: #f1f1f1;
-  border: 1px solid #ddd;
-  color: #333;
-}
-
-/* --- Button Full Centered & Smaller --- */
-.buttonFullCenter {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  margin-top: 60px; /* Space from top content */
-}
-
-/* Mobile */
-@media (max-width: 900px) {
-  .container { flex-direction: column; text-align: center; }
-  .socialWrapper { justify-content: center; }
-}
-/* --- Social Icons Container --- */
-.socialWrapper {
-  display: flex;
-  gap: 12px;
-  margin: 25px 0;
-}
-
-/* --- Social Icon Box --- */
-.iconBox {
-  width: 42px;
-  height: 42px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 1px; /* 1px Radius as requested */
-  background: #f1f1f1; /* Light gray background */
-  border: 1px solid #ddd;
-  color: #333; /* Dark gray icons */
-  font-size: 1.2rem;
-  transition: all 0.3s ease; /* Smooth hover transition */
-  text-decoration: none;
-  cursor: pointer;
-}
-
-/* --- Hover Effect Wapis Agaya --- */
-.iconBox:hover {
-  background: #1a1a1a !important; /* Black background on hover */
-  color: #ffffff !important; /* White icon on hover */
-  transform: translateY(-3px); /* Thoda sa upar move hoga attractive lagne ke liye */
-  border-color: #1a1a1a;
-}
-/* --- Button Full Centered --- */
-.buttonFullCenter {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  margin-top: 50px;
-}
-
-.exploreBtn {
-  position: relative;
-  background: #ffffff;
-  color: #1a1a1a;
-  border: 1px solid #ccc;
-  padding: 15px 40px;
-  font-size: 0.85rem;
-  font-weight: 800;
-  letter-spacing: 2px;
-  cursor: pointer;
-  overflow: hidden;
-  z-index: 1;
-      font-family: "Cinzel", serif;
-
-
-  /* --- THE FIX --- */
-  /* 'all' use karne se scale (transform) aur color dono makkhan ki tarah smooth honge */
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); 
-}
-
-/* Jab mouse daba kar rakhen (Click state) */
-.exploreBtn:active {
-  transform: scale(0.92); /* Thoda sa shrink hoga */
-  transition: transform 0.1s ease; /* Dabbte waqt fast responsiveness ke liye */
-}
-
-.exploreBtn::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 50%;
-  width: 0;
-  height: 100%;
-  background: #000000;
-  transition: width 0.4s ease-in-out;
-  z-index: -1;
-  transform: translateX(-50%);
-}
-
-.exploreBtn:hover::before {
-  width: 100%;
-}
-
-.exploreBtn:hover {
-  color: #ffffff;
-}
-
-.outerBorder {
-  position: absolute;
-  top: -7px;
-  left: -7px;
-  right: -7px;
-  bottom: -7px;
-  border: 1px solid #ccc;
-  /* Isse bhi transition mein rakha hai takay green color smooth aaye */
-  transition: border-color 0.3s ease;
-  pointer-events: none;
-}
-
-.exploreBtn:hover .outerBorder {
-  border-color: #00ff00;
-}
-/* Outer Border Styling */
-.outerBorder {
-  position: absolute;
-  top: -7px;
-  left: -7px;
-  right: -7px;
-  bottom: -7px;
-  border: 1px solid #ccc;
-  transition: 0.3s;
-  pointer-events: none; /* Mouse is border ko block na kare */
-}
-
-.exploreBtn:hover .outerBorder {
-  border-color: #00ff00; /* Hover par outer border green hoga */
-}
-.pulseContainer {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 20px;
-  height: 20px;
-}
-
-.greenDot {
-  width: 8px;
-  height: 8px;
-  background-color: #00ff00; /* Bright Green Dot */
-  border-radius: 50%;
-  z-index: 5;
-}
-
-.bubble {
-  position: absolute;
-  width: 8px;
-  height: 8px;
-  border: 1.5px solid #00ff00;
-  border-radius: 50%;
-  opacity: 0;
-  z-index: 1;
-  animation: rippleEffect 2.5s infinite cubic-bezier(0.36, 0.11, 0.89, 0.32);
-}
-
-/* Har bubble ka delay alag hoga takay wo aik ke baad aik niklein */
-.b1 { animation-delay: 0s; }
-.b2 { animation-delay: 0.8s; }
-.b3 { animation-delay: 1.6s; }
-
-@keyframes rippleEffect {
-  0% {
-    transform: scale(1);
-    opacity: 0.8;
-  }
-  100% {
-    transform: scale(4.5); /* Bubble phail jaye ga */
-    opacity: 0;
-  }
-}
-
-/* Hover effect for social icons (aapne kaha tha hover nahi ho raha) */
-.iconBox:hover {
-  background-color: #1a1a1a !important;
-  color: #ffffff !important;
-  border-color: #1a1a1a;
-  transform: translateY(-4px);
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-}
-/* --- New Large Frame for Image, Name & Badge --- */
 .largeFrame {
-  border: 1px solid #ddd; /* 1px Outside Border as requested */
-  padding: 15px;
+  border: 1px solid #ddd;
+  padding: 12px;
   background: #fff;
   display: flex;
   flex-direction: column;
   align-items: center;
   border-radius: 1px;
+  width: 100%;
+  max-width: 360px; /* PC par size */
+  transition: all 0.3s ease;
 }
 
 .imageWrapper {
-  width: 360px;
-  height: 460px;
+  width: 100%;
+  aspect-ratio: 3 / 4; /* Mobile par height khud set hogi */
   overflow: hidden;
   margin-bottom: 15px;
 }
@@ -335,17 +57,17 @@ font-family: "Syne", sans-serif;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding-bottom: 10px;
 }
 
-/* --- Text Highlight for Internships --- */
-.highlight {
+.userName {
+  font-size: 1.4rem;
+  font-weight: 800;
   color: #1a1a1a;
-  font-weight: 700;
-  border-bottom: 1px solid #ccc; /* Green underline for companies */
+  font-family: "Cinzel", serif;
+  margin: 0;
 }
 
-/* --- Baki aapka purana CSS yahan niche paste kar dein (Animations, Button, etc.) --- */
+/* --- Status Badge & Bubbles --- */
 .statusBadge {
   margin-top: 10px;
   display: inline-flex;
@@ -356,15 +78,133 @@ font-family: "Syne", sans-serif;
   border-radius: 50px;
   font-size: 0.75rem;
   color: #888;
+  font-family: "Cinzel", serif;
 }
 
-/* Pulse aur Ripples wahi purane wale */
+.pulseContainer { 
+  position: relative; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  width: 16px; 
+}
+
+.greenDot { 
+  width: 8px; 
+  height: 8px; 
+  background-color: #00ff00; 
+  border-radius: 50%; 
+  z-index: 5; 
+}
+
+.bubble {
+  position: absolute;
+  width: 8px; 
+  height: 8px;
+  border: 1.5px solid #00ff00;
+  border-radius: 50%;
+  animation: rippleEffect 2.5s infinite ease-out;
+}
+
+.b1 { animation-delay: 0s; }
+.b2 { animation-delay: 0.8s; }
+.b3 { animation-delay: 1.6s; }
+
 @keyframes rippleEffect {
   0% { transform: scale(1); opacity: 0.8; }
   100% { transform: scale(4.5); opacity: 0; }
 }
 
-/* Button hover animation (Center to ends) wahi purani wali */
+/* --- Content Side: Typography Fixes --- */
+.contentSide {
+  flex: 1;
+}
+
+.introHeading {
+  /* iPhone X par font khud chota ho jayega */
+  font-size: clamp(1.5rem, 4vw, 2.4rem); 
+  font-weight: 600;
+  line-height: 1.3;
+  font-family: "Syne", sans-serif;
+  color: #1a1a1a;
+  margin-bottom: 15px;
+}
+
+.skillBox {
+  display: inline-block;
+  border: 1px solid #d5d3d36c;
+  padding: 2px 8px;
+  border-radius: 2px;
+  font-size: 0.85em;
+  font-family: "Edu AU VIC WA NT Arrows", cursive;
+}
+
+.description {
+  /* Line spacing behtar ki hai takay paragraphs lambe na lagein */
+  font-size: clamp(0.95rem, 2vw, 1.1rem);
+  color: #888;
+  margin-top: 15px;
+  font-family: "Cinzel", serif;
+  line-height: 1.6;
+}
+
+.highlight {
+  color: #1a1a1a;
+  font-weight: 700;
+  border-bottom: 1px solid #ccc;
+}
+
+/* --- Social Icons --- */
+.socialWrapper { 
+  display: flex; 
+  gap: 12px; 
+  margin: 30px 0; 
+}
+
+.iconBox {
+  width: 42px; 
+  height: 42px;
+  display: flex; 
+  justify-content: center; 
+  align-items: center;
+  border-radius: 1px;
+  background: #f1f1f1;
+  border: 1px solid #ddd;
+  color: #333;
+  transition: all 0.3s ease;
+  font-size: 1.2rem;
+}
+
+.iconBox:hover {
+  background: #1a1a1a !important;
+  color: #fff !important;
+  transform: translateY(-4px);
+}
+
+/* --- Explore Button: Smooth Center Animation --- */
+.buttonFullCenter {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.exploreBtn {
+  position: relative;
+  background: #fff;
+  color: #1a1a1a;
+  border: 1px solid #ccc;
+  padding: 15px 40px;
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  cursor: pointer;
+  overflow: hidden;
+  z-index: 1;
+  font-family: "Cinzel", serif;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 .exploreBtn::before {
   content: "";
   position: absolute;
@@ -372,9 +212,85 @@ font-family: "Syne", sans-serif;
   left: 50%;
   width: 0;
   height: 100%;
-  background: #000000;
-  transition: all 0.5s ease;
+  background: #000;
+  transition: width 0.4s ease-in-out;
   z-index: -1;
   transform: translateX(-50%);
 }
-.exploreBtn:hover::before { width: 100%; }
+
+.exploreBtn:hover::before { 
+  width: 100%; 
+}
+
+.exploreBtn:hover { 
+  color: #fff; 
+}
+
+.exploreBtn:active { 
+  transform: scale(0.95); 
+}
+
+.outerBorder {
+  position: absolute;
+  top: -6px; 
+  left: -6px; 
+  right: -6px; 
+  bottom: -6px;
+  border: 1px solid #ccc;
+  transition: 0.3s;
+  pointer-events: none;
+}
+
+.exploreBtn:hover .outerBorder { 
+  border-color: #00ff00; 
+}
+
+/* --- Mobile Responsive (The "No-Fail" Media Queries) --- */
+@media (max-width: 900px) {
+  .container {
+    flex-direction: column;
+    gap: 40px;
+    text-align: center;
+  }
+
+  .imageSide { 
+    width: 100%; 
+  }
+  
+  .largeFrame {
+    max-width: 300px; /* iPhone screen size adjustment */
+  }
+
+  .introHeading {
+    line-height: 1.2;
+    padding: 0 10px;
+  }
+
+  .description {
+    padding: 0 15px;
+    text-align: center;
+  }
+
+  .socialWrapper { 
+    justify-content: center; 
+  }
+}
+
+@media (max-width: 480px) {
+  .aboutSection {
+    padding: 60px 20px;
+  }
+  
+  .largeFrame { 
+    max-width: 270px; /* iPhone SE / Mini mobiles fix */
+  }
+  
+  .introHeading { 
+    font-size: 1.3rem; 
+  }
+  
+  .exploreBtn { 
+    padding: 12px 25px; 
+    font-size: 0.75rem; 
+  }
+}
