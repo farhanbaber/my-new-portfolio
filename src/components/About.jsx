@@ -62,7 +62,7 @@ const About = () => {
 
       <div className={styles.buttonFullCenter}>
         <button className={styles.exploreBtn}>
-           EXPLORE MY PROJECTS <span className={styles.arrow}>↗</span>
+           EXPLORE MY PROJECTS <i class="fa-solid fa-arrow-right"></i>
            <div className={styles.outerBorder}></div>
         </button>
       </div>

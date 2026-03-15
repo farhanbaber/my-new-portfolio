@@ -1,0 +1,124 @@
+.resumeSection {
+  position: relative;
+  padding: 100px 5%;
+  background-color: #f8f8f8;
+  font-family: 'Syne', sans-serif;
+  overflow: hidden;
+}
+
+.noiseOverlay {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background-image: url("https://grainy-gradients.vercel.app/noise.svg");
+  opacity: 0.04;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.container {
+  position: relative;
+  max-width: 1100px;
+  margin: 0 auto;
+  z-index: 2;
+}
+
+.mainTitle {
+  text-align: center;
+  font-size: clamp(2.5rem, 6vw, 3.5rem);
+  font-weight: 800;
+  margin-bottom: 70px;
+  color: #111;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+}
+
+.mainTitle span { color: #999; font-weight: 300; }
+
+.columnHeader {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 40px;
+  color: #222;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.timeline {
+  position: relative;
+  border-left: 2px solid #ddd;
+  padding-left: 40px;
+  margin-left: 15px;
+}
+
+.cardWrapper {
+  position: relative;
+  margin-bottom: 45px;
+}
+
+.dot {
+  position: absolute;
+  left: -48px;
+  top: 24px;
+  width: 14px;
+  height: 14px;
+  background-color: #111;
+  border: 4px solid #f8f8f8;
+  border-radius: 50%;
+}
+
+.card {
+  background: #ffffff;
+  border: 1px solid #eee;
+  padding: 30px;
+  border-radius: 4px;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card:hover {
+  transform: translateX(10px);
+  border-color: #111;
+  box-shadow: 20px 20px 60px #d9d9d9;
+}
+
+.card h4 { font-size: 1.3rem; margin-bottom: 10px; font-weight: 800; }
+
+.dateTag {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #888;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  display: block;
+}
+
+.skillsGrid { display: flex; flex-wrap: wrap; gap: 15px; }
+
+.skillPill {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  padding: 12px 24px;
+  border-radius: 100px;
+  font-weight: 600;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.skillPill:hover {
+  background: #111;
+  color: #fff;
+  transform: translateY(-5px);
+}
+
+.skillIcon { font-size: 1.2rem; display: flex; }
+
+@media (max-width: 768px) {
+  .timeline { padding-left: 25px; }
+  .dot { left: -33px; }
+  .mainTitle { font-size: 2rem; }
+}
