@@ -26,7 +26,7 @@ const Resume = () => {
     <section className={styles.resumeSection}>
       <div className={styles.noiseOverlay}></div>
       <div className={styles.container}>
-        <h2 className={styles.mainTitle}>Professional <span>Resume</span></h2>
+        <h2 className={styles.mainTitle}>Professional <span className={styles.mainspan}>Resume</span></h2>
         
         <div className={styles.educationWrapper}>
           <h3 className={styles.columnHeader}><FaGraduationCap /> Academic Training</h3>

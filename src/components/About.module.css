@@ -180,8 +180,6 @@
   color: #fff !important;
   transform: translateY(-4px);
 }
-
-/* --- Explore Button: Smooth Center Animation --- */
 .buttonFullCenter {
   width: 100%;
   display: flex;
@@ -193,7 +191,7 @@
   position: relative;
   background: #fff;
   color: #1a1a1a;
-  border: 1px solid #ccc;
+  border: 1px solid #d3d3d3; /* light grey border */
   padding: 15px 40px;
   font-size: 0.85rem;
   font-weight: 800;
@@ -236,7 +234,7 @@
   left: -6px; 
   right: -6px; 
   bottom: -6px;
-  border: 1px solid #ccc;
+  border: 1px solid #e0e0e0; /* outer light grey border */
   transition: 0.3s;
   pointer-events: none;
 }
