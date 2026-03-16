@@ -17,9 +17,10 @@ const Resume = () => {
     { name: "Node.js", icon: <FaNodeJs style={{color: '#339933'}} /> },
     { name: "Firebase", icon: <SiFirebase style={{color: '#FFCA28'}} /> },
     { name: "MongoDB", icon: <SiMongodb style={{color: '#47A248'}} /> },
-    { name: "Express", icon: <SiExpress style={{color: '#000000'}} /> },
+    { name: "Express.js", icon: <SiExpress style={{color: '#000000'}} /> },
     { name: "GitHub", icon: <FaGithub style={{color: '#181717'}} /> },
-    { name: "Git", icon: <FaGitAlt style={{color: '#F05032'}} /> }
+    { name: "Git", icon: <FaGitAlt style={{color: '#F05032'}} /> },
+    { name: "Bootstrap", icon: <SiBootstrap style={{color: '#7952B3'}} /> },
   ];
 
   return (

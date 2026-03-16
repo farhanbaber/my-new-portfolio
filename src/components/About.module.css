@@ -191,13 +191,13 @@
   position: relative;
   background: #fff;
   color: #1a1a1a;
-  border: 1px solid #d3d3d3; /* light grey border */
+  border: 1px solid #d3d3d3; /* Light grey border */
   padding: 15px 40px;
   font-size: 0.85rem;
   font-weight: 800;
   letter-spacing: 2px;
   cursor: pointer;
-  overflow: hidden;
+  overflow: visible; /* Isay visible rakha hai taaki border nazar aaye */
   z-index: 1;
   font-family: "Cinzel", serif;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -230,19 +230,22 @@
 
 .outerBorder {
   position: absolute;
-  top: -6px; 
-  left: -6px; 
-  right: -6px; 
-  bottom: -6px;
-  border: 1px solid #e0e0e0; /* outer light grey border */
-  transition: 0.3s;
+  /* Gap barha diya hai taaki border door nazar aaye */
+  top: -12px; 
+  left: -12px; 
+  right: -12px; 
+  bottom: -12px;
+  border: 1px solid #e0e0e0; /* Outer light grey border */
+  transition: all 0.4s ease;
   pointer-events: none;
 }
 
+/* Hover effect: Green border with slight scale for "Proper" look */
 .exploreBtn:hover .outerBorder { 
-  border-color: #00ff00; 
+  border-color: #e0e0e0; 
+  transform: scale(1.05); /* Halka sa expand hoga hover par */
+  border-width: 1.5px; /* Thora wazay karne ke liye width barha di */
 }
-
 /* --- Mobile Responsive (The "No-Fail" Media Queries) --- */
 @media (max-width: 900px) {
   .container {

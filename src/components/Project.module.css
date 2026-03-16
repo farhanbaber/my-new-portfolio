@@ -1,0 +1,99 @@
+.projectSection {
+  background-color: #ffffff;
+  padding: 100px 0;
+  overflow: hidden;
+  font-family: 'Syne', sans-serif;
+  /* font-family: "Cinzel", serif;  */
+}
+
+.headerArea { text-align: center; margin-bottom: 50px; }
+.subHeading { font-size: 0.75rem; letter-spacing: 5px; color: #999; text-transform: uppercase; font-weight: 700; 
+font-family: "Cinzel", serif; 
+}
+.mainTitle { font-size: clamp(1.8rem, 5vw, 2.5rem); font-weight: 800; text-transform: uppercase; color: #111; margin-top: 10px; }
+.mainTitle span { color: #ddd; font-weight: 300; }
+
+.swiperContainer { position: relative; width: 100%; max-width: 1200px; margin: 0 auto; }
+.mainspan{
+        font-family: "Syne", sans-serif;
+
+}
+/* --- CARD SIZE: Compact --- */
+.swiperSlide {
+  width: 360px !important; 
+  transition: all 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+  filter: blur(8px);
+  opacity: 0.3;
+  transform: scale(0.85);
+}
+
+:global(.swiper-slide-active) {
+  filter: blur(0);
+  opacity: 1;
+  transform: scale(1.08) !important;
+}
+
+.card {
+  background: #f7f7f7; /* Subtle Light Grey */
+  border: 1px solid #eeeeee;
+  border-radius: 4px;
+  overflow: hidden;
+  transition: 0.4s;
+  font-family: "Cinzel", serif; 
+}
+
+.imageBox { width: 100%; height: 210px; background: #e8e8e8; }
+.imageBox img { width: 100%; height: 100%; object-fit: cover; }
+
+.content { padding: 30px; text-align: center; padding-bottom: 25px; }
+.content h3 { font-size: 1.2rem; font-weight: 800; margin-bottom: 12px; color: #111; letter-spacing: 1px; }
+.content p { font-size: 0.85rem; color: #777; line-height: 1.6; margin-bottom: 25px; height: 40px; overflow: hidden; }
+
+/* --- LUXURY BUTTON (No Green) --- */
+.actionBtn {
+  background: #111;
+  color: #fff;
+  padding: 14px 28px;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: 0.4s ease;
+  border: 1px solid #111;
+}
+
+.actionBtn:hover {
+  background: #fff;
+  color: #111;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* --- NAVIGATION BUTTONS --- */
+.navBtn {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  width: 50px; height: 50px; background: #fff; border: 1px solid #eee;
+  border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  cursor: pointer; z-index: 20; transition: 0.3s;
+}
+:global(.prevBtnCustom) { left: 15px; }
+:global(.nextBtnCustom) { right: 15px; }
+.navBtn:hover { background: #111; color: #fff; border-color: #111; }
+
+/* --- PROFESSIONAL PAGINATION: Fix Bottom Spacing --- */
+:global(.swiper-pagination) {
+  position: relative !important;
+  margin-top: 50px !important; /* Move bullets down from cards */
+  padding-bottom: 30px !important;
+}
+
+:global(.swiper-pagination-bullet) { background: #ccc !important; opacity: 1; }
+:global(.swiper-pagination-bullet-active) { background: #111 !important; width: 25px; border-radius: 4px; }
+
+@media (max-width: 600px) {
+  .swiperSlide { width: 300px !important; }
+  .navBtn { display: none; }
+  :global(.swiper-pagination) { margin-top: 30px !important; }
+}
