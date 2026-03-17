@@ -1,0 +1,115 @@
+.container {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 46px;
+  height: 46px;
+  cursor: pointer;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.4s ease;
+}
+
+.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.progressSvg {
+  transform: rotate(-90deg);
+  position: absolute;
+}
+
+.circleBg {
+  fill: none;
+  stroke: #e0e0e0;
+  stroke-width: 2;
+}
+
+.circleFill {
+  fill: none;
+  stroke: #000000; /* Black Fill Twist */
+  stroke-width: 2;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 0.1s linear;
+}
+
+.arrowIcon {
+  font-size: 14px;
+  color: #000;
+  z-index: 2;
+  margin-top: -2px;
+}
+
+/* Hover Effect */
+.container:hover .arrowIcon {
+  transform: translateY(-3px);
+  transition: 0.3s;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .container {
+    bottom: 20px;
+    right: 20px;
+  }
+}
+
+.wrapper {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 2000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.svg {
+  transform: rotate(-90deg);
+  position: absolute;
+}
+
+.bgCircle {
+  fill: none;
+  stroke: #eeeeee; /* Light Gray base */
+  stroke-width: 2;
+}
+
+.fillCircle {
+  fill: none;
+  stroke: #000000; /* Pure Black Fill */
+  stroke-width: 2;
+  stroke-linecap: round;
+  /* Stroke fill hone ki speed thori smooth rakhi hai */
+  transition: stroke-dashoffset 0.1s linear;
+}
+
+.icon {
+  font-size: 14px;
+  color: #000;
+  z-index: 5;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .wrapper {
+    bottom: 20px;
+    right: 20px;
+  }
+}

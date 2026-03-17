@@ -69,6 +69,8 @@
   color: #888;
   flex-wrap: wrap; /* Mobiles par items automatically adjust honge */
   width: 100%;
+    font-family: "Cinzel", serif;
+
 }
 
 .skillItem {

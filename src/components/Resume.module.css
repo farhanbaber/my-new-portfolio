@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Syne:wght@400;700;800&display=swap');
 /* --- Desktop (PC) Content: Wahi pehle wala bikhra hua look --- */
 .resumeSection {
   position: relative;
@@ -5,6 +6,7 @@
   background-color: whitesmoke;
   font-family: 'Syne', sans-serif;
   overflow: hidden;
+
 
 
 }
@@ -158,4 +160,12 @@
 
   .mainTitle { font-size: 1.8rem; }
   .card { padding: 20px; }
+}
+
+.eduTitle {
+  font-family: "Cinzel", serif; /* Ye heavy aur premium look dega */
+  font-weight: 900;
+}
+.eduDesc {
+  font-family: 'Syne', sans-serif; /* Ye modern aur clean look dega */
 }

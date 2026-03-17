@@ -1,12 +1,32 @@
+import React from 'react';
 import styles from './Resume.module.css';
-import { FaGraduationCap, FaCalendarAlt, FaHtml5, FaCss3Alt, FaJs, FaReact, FaNodeJs, FaGithub, FaGitAlt, FaDatabase, FaDownload } from 'react-icons/fa';
-import { SiMongodb, SiTypescript, SiBootstrap, SiExpress, SiFirebase } from 'react-icons/si';
+import { 
+  FaGraduationCap, FaCalendarAlt, FaHtml5, FaCss3Alt, 
+  FaJs, FaReact, FaNodeJs, FaGithub, FaGitAlt, 
+  FaDownload 
+} from 'react-icons/fa';
+import { 
+  SiMongodb, SiBootstrap, SiExpress, SiFirebase 
+} from 'react-icons/si';
 
 const Resume = () => {
+  // Education order updated: Latest on top
   const education = [
-    { date: "2010 - 2025", title: "Matriculation", desc: "Completed Matriculation with a strong focus on science and logical reasoning." },
-    { date: "2025 - 2027", title: "FSC - Pre-Engineering", desc: "Currently pursuing Pre-Engineering to strengthen analytical skills." },
-    { date: "2025 - 2026", title: "Full Stack Development (SMIT)", desc: "Completed intensive MERN Stack training at Saylani Mass IT Consulting." }
+    { 
+      date: "2010 - 2025", 
+      title: "Schooling & Matriculation", 
+      desc: "Completed foundational science education with a strong focus on logical reasoning." 
+    },
+    { 
+      date: "2025 - 2027", 
+      title: "FSC - Pre-Engineering", 
+      desc: "Currently pursuing Pre-Engineering to strengthen analytical skills and mathematical foundations." 
+    },
+    { 
+      date: "2025 - 2026", 
+      title: "Full Stack Development (SMIT)", 
+      desc: "Completed intensive MERN Stack training at Saylani Mass IT Consulting, focusing on scalable web architectures." 
+    }
   ];
 
   const skillsList = [
@@ -37,8 +57,8 @@ const Resume = () => {
                 <div className={styles.dot}></div>
                 <div className={styles.card}>
                   <span className={styles.dateTag}><FaCalendarAlt /> {item.date}</span>
-                  <h4>{item.title}</h4>
-                  <p>{item.desc}</p>
+                  <h4 className={styles.eduTitle}>{item.title}</h4>
+                  <p className={styles.eduDesc}>{item.desc}</p>
                 </div>
               </div>
             ))}
@@ -51,7 +71,7 @@ const Resume = () => {
             {skillsList.map((skill, index) => (
               <div key={index} className={styles.skillPill}>
                 <span className={styles.skillIcon}>{skill.icon}</span>
-                {skill.name}
+                <span className={styles.skillName}>{skill.name}</span>
               </div>
             ))}
           </div>

@@ -31,10 +31,13 @@ const ProjectSection = () => {
 
   return (
     <section className={styles.projectSection}>
-      <div className={styles.headerArea}>
-        <p className={styles.subHeading}>Curated Portfolio</p>
-        <h2 className={styles.mainTitle}>Featured <span className={styles.mainspan}>Masterpieces</span></h2>
-      </div>
+ <div className={styles.headerArea}>
+  <p className={styles.subHeading}>Curated Portfolio</p>
+  {/* Yahan maine "portfolioTitle" ki extra class add ki hai */}
+  <h2 className={`${styles.mainTitle} ${styles.portfolioTitle}`}>
+    Featured <span className={styles.mainspan}>Masterpieces</span>
+  </h2>
+</div>
 
       <div className={styles.swiperContainer}>
         <Swiper
