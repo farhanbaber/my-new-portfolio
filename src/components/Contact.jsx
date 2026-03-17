@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import styles from './Contact.module.css';
 import { HiOutlineMail, HiOutlinePhone, HiOutlineLocationMarker } from "react-icons/hi";
-// Icons updated with WhatsApp and Twitter/X
 import { FaLinkedinIn, FaBehance, FaInstagram, FaArrowRight, FaWhatsapp, FaTwitter } from "react-icons/fa";
 
 const Contact = () => {
@@ -11,6 +10,8 @@ const Contact = () => {
     event.preventDefault();
     setResult("Sending...");
     const formData = new FormData(event.target);
+    
+    // Yahan apni Web3Forms Key zaroor dalna jani
     formData.append("access_key", "YOUR_ACCESS_KEY_HERE");
 
     const response = await fetch("https://api.web3forms.com/submit", {
@@ -37,7 +38,7 @@ const Contact = () => {
         </div>
 
         <div className={styles.mainBox}>
-          
+          {/* LEFT SIDE: INFO */}
           <div className={styles.infoSide}>
             <h2 className={styles.title}>
               Let’s talk <br /> on something <span className={styles.italic}>great</span> together
@@ -57,24 +58,16 @@ const Contact = () => {
                 <span>Peshawar, Pakistan</span>
               </div>
 
-              {/* --- NEW SOCIAL BAR UNDER LOCATION --- */}
               <div className={styles.inlineSocials}>
-                <a href="https://wa.me/923001234567" target="_blank" rel="noreferrer" className={styles.wa}>
-                  <FaWhatsapp />
-                </a>
-                <a href="https://twitter.com" target="_blank" rel="noreferrer">
-                  <FaTwitter />
-                </a>
-                <a href="https://instagram.com" target="_blank" rel="noreferrer">
-                  <FaInstagram />
-                </a>
-                <a href="https://linkedin.com" target="_blank" rel="noreferrer">
-                  <FaLinkedinIn />
-                </a>
+                <a href="https://wa.me/923001234567" target="_blank" className={styles.wa}><FaWhatsapp /></a>
+                <a href="#" target="_blank"><FaTwitter /></a>
+                <a href="#" target="_blank"><FaInstagram /></a>
+                <a href="#" target="_blank"><FaLinkedinIn /></a>
               </div>
             </div>
           </div>
 
+          {/* RIGHT SIDE: FORM */}
           <div className={styles.formSide}>
             <form onSubmit={onSubmit} className={styles.form}>
               <p className={styles.formLabel}>I'm interested in:</p>
@@ -87,9 +80,11 @@ const Contact = () => {
                 ))}
               </div>
 
-              <input type="text" name="name" className={styles.input} placeholder="Your name" required />
-              <input type="email" name="email" className={styles.input} placeholder="Your email" required />
-              <textarea name="message" className={styles.input} rows="3" placeholder="Tell me about your project" required></textarea>
+              <div className={styles.inputWrapper}>
+                <input type="text" name="name" className={styles.input} placeholder="Your name" required />
+                <input type="email" name="email" className={styles.input} placeholder="Your email" required />
+                <textarea name="message" className={styles.input} rows="3" placeholder="Tell me about your project" required></textarea>
+              </div>
 
               <button type="submit" className={styles.animatedBtn}>
                 <span className={styles.btnText}>SEND MESSAGE</span>
