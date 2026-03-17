@@ -102,7 +102,9 @@
 
 /* --- MOBILE RESPONSIVE (THE FIX) --- */
 @media (max-width: 768px) {
-  .contactSection { padding: 50px 0; }
+  .contactSection { padding: 50px 0; 
+    font-family: 'Syne', sans-serif;
+}
   .mainHeading { font-size: 1.8rem; }
   .mainBox { grid-template-columns: 1fr; border-radius: 0; }
   .infoSide { padding: 40px 20px; }
