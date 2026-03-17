@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import Loader from "./components/Loader"; // Name align kar diya
+import AOS from 'aos'; // Library import
+import 'aos/dist/aos.css'; // AOS Styles
+import Loader from "./components/Loader"; 
 import Navbar from "./components/Navbar";
 import Home from "./components/Home";
 import About from "./components/About";
@@ -16,14 +18,23 @@ function App() {
   const [isExiting, setIsExiting] = useState(false);
 
   useEffect(() => {
-    // 4.2 seconds par fade-out animation trigger hogi
+    // --- AOS INITIALIZATION ---
+    AOS.init({
+      duration: 1000, // 1 second animation duration
+      once: true,     // Ek baar hi animate hoga (Professional lagta hai)
+      easing: 'ease-in-out',
+      offset: 100,    // Thora pehle trigger hoga screen pe aane se
+    });
+
+    // --- LOADER TIMERS ---
     const exitTimer = setTimeout(() => {
       setIsExiting(true);
     }, 4200);
 
-    // 5 seconds par loader screen se hat jayega
     const removeTimer = setTimeout(() => {
       setLoading(false);
+      // Loader khatam hone ke baad AOS ko refresh karna zaroori hai
+      setTimeout(() => AOS.refresh(), 100);
     }, 5000);
 
     return () => {
@@ -35,17 +46,36 @@ function App() {
   return (
     <div>
       {loading ? (
-        /* isExiting prop ko directly pass kar rahe hain Loader component mein */
         <Loader isExiting={isExiting} />
       ) : (
-        <div className="portfolio-reveal">
+        /* 'hero-reveal' for the Bhooom effect on first load */
+        <div className="hero-reveal">
           <Navbar /> 
+          
+          {/* Hero Section (No AOS here, we use custom Bhooom animation) */}
           <Home />
-          <About />
-          <Resume />
-          <Project/>
-          <Services/>
-          <Contact/>
+          
+          {/* Baki sections pe AOS lag gaya hai */}
+          <div data-aos="fade-up" data-aos-delay="100">
+            <About />
+          </div>
+
+          <div data-aos="fade-up" data-aos-delay="100">
+            <Resume />
+          </div>
+
+          <div data-aos="fade-up" data-aos-delay="100">
+            <Project />
+          </div>
+
+          <div data-aos="fade-up" data-aos-delay="100">
+            <Services />
+          </div>
+
+          <div data-aos="fade-up" data-aos-delay="100">
+            <Contact />
+          </div>
+
           <Foter />
           <ScrollToTop />
         </div>

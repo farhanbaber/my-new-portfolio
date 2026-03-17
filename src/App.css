@@ -1,3 +1,38 @@
+/* 1. Hero Entrance (The Bhooom Effect) */
+.hero-reveal {
+  animation: heroBhoom 1.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  /* Starting point for animation */
+  will-change: transform, opacity;
+}
+
+@keyframes heroBhoom {
+  0% {
+    opacity: 0;
+    transform: scale(0.9) translateY(50px);
+    filter: blur(15px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    filter: blur(0);
+  }
+}
+
+/* 2. Custom Scrollbar (Optional but looks Pro) */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #000;
+}
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
 .portfolio-reveal {
   animation: slideInUp 1.2s cubic-bezier(0.19, 1, 0.22, 1);
 }
