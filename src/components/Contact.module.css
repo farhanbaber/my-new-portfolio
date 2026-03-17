@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@700;800&family=Syne:wght@400;700&family=Cinzel:wght@900&display=swap');
+
 .contactSection {
   background-color: #ffffff;
   padding: 100px 0;
@@ -10,13 +12,29 @@
   padding: 0 20px;
 }
 
-/* Header Styles */
+/* --- Headers --- */
 .topHeader { text-align: center; margin-bottom: 50px; }
-.badge { font-size: 0.7rem; letter-spacing: 3px; color: #888; text-transform: uppercase; display: block; margin-bottom: 10px; }
-.mainHeading { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 800; text-transform: uppercase; color: #111; }
-.mainHeading span { color: #bbb; font-weight: 300; }
+.badge {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #888;
+  display: block;
+  margin-bottom: 10px;
+}
+.mainHeading {
+  font-family: 'Open Sans', sans-serif;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #111;
+  letter-spacing: -1px;
+}
+.mainHeading span { font-weight: 300; color: #bbb; }
 
-/* Main Box */
+/* --- Layout --- */
 .mainBox {
   background-color: #f9f9f9;
   display: grid;
@@ -26,13 +44,7 @@
   border: 1px solid #eee;
 }
 
-/* Left Side */
-.infoSide {
-  background-color: #f1f1f1;
-  padding: 60px;
-  color: #000;
-}
-
+.infoSide { background-color: #f1f1f1; padding: 60px; color: #000; }
 .title {
   font-family: 'Cinzel', serif;
   font-size: 2.2rem;
@@ -41,8 +53,8 @@
   margin-bottom: 40px;
   text-transform: uppercase;
 }
-
 .italic { font-style: italic; color: #777; font-weight: 300; }
+
 .contactList { display: flex; flex-direction: column; gap: 20px; }
 .contactItem { display: flex; align-items: center; gap: 12px; font-size: 0.9rem; }
 .contactItem a { color: #000; text-decoration: none; font-weight: 500; }
@@ -53,14 +65,33 @@
 .inlineSocials a:hover { opacity: 1; transform: translateY(-3px); }
 .wa:hover { color: #25D366 !important; }
 
-/* Right Side Form */
+/* --- Form --- */
 .formSide { background: #fff; padding: 60px; }
 .formLabel { font-size: 0.7rem; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 20px; color: #111; }
-
 .interestGrid { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 30px; }
-.chip input { display: none; }
-.chip span { padding: 8px 18px; border: 1px solid #ddd; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; cursor: pointer; transition: 0.3s; display: inline-block; }
-.chip input:checked + span { background: #111; color: #fff; border-color: #111; }
+
+/* --- Chips Fix --- */
+.chip { position: relative; display: inline-block; }
+.chip input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+.chip span {
+  padding: 8px 18px;
+  border: 1px solid #ddd;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: 0.3s;
+  display: inline-block;
+}
+.chip input:checked + span {
+  background: #111;
+  color: #fff;
+  border-color: #111;
+}
 
 .inputWrapper { display: flex; flex-direction: column; gap: 10px; }
 .input {
@@ -75,7 +106,7 @@
 }
 .input:focus { border-bottom-color: #111 !important; }
 
-/* Animated Button */
+/* --- BUTTON FIX (MOST IMPORTANT) --- */
 .animatedBtn {
   position: relative;
   width: 100%;
@@ -89,28 +120,119 @@
   justify-content: center;
   gap: 12px;
   margin-top: 30px;
-  z-index: 1;
+  z-index: 10; /* Stack level high rakha */
 }
 
-.btnText { font-weight: 900; font-size: 0.8rem; letter-spacing: 2px; color: #111; z-index: 2; transition: 0.5s; }
-.btnIcon { z-index: 2; transition: 0.5s; color: #111; }
-.btnBackground { position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: #111; transition: 0.5s; z-index: -1; }
+.btnText, .btnIcon {
+  position: relative;
+  z-index: 15; /* Text aur Icon ko background se upar kiya */
+  pointer-events: none; /* Taake click seedha button par lage */
+  transition: 0.5s;
+  color: #111;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 800;
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+}
+
+.btnBackground {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: #111;
+  transition: 0.5s;
+  z-index: 11; /* Text ke neeche lekin button frame ke upar */
+}
+
 .animatedBtn:hover .btnBackground { left: 0; }
 .animatedBtn:hover .btnText, .animatedBtn:hover .btnIcon { color: #fff; }
 
-.statusText { margin-top: 15px; text-align: center; font-weight: 700; font-size: 0.8rem; }
+.statusText { margin-top: 15px; text-align: center; font-weight: 700; font-size: 0.8rem; color: #111; }
 
-/* --- MOBILE RESPONSIVE (THE FIX) --- */
+/* --- Responsive --- */
 @media (max-width: 768px) {
-  .contactSection { padding: 50px 0; 
-    font-family: 'Syne', sans-serif;
-}
-  .mainHeading { font-size: 1.8rem; }
+  .contactSection { padding: 50px 0; }
+  .mainHeading { font-size: 1.8rem !important; }
   .mainBox { grid-template-columns: 1fr; border-radius: 0; }
   .infoSide { padding: 40px 20px; }
-  .title { font-size: 1.6rem; margin-bottom: 25px; }
+  .title { font-size: 1.6rem !important; margin-bottom: 25px; }
   .formSide { padding: 40px 20px; }
-  .interestGrid { margin-bottom: 20px; }
-  .chip span { padding: 6px 12px; font-size: 0.6rem; }
-  .input { padding: 12px 0; font-size: 0.9rem; }
 }
+
+/* Success Overlay */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.4s ease;
+}
+
+.successCard {
+  background: #fff;
+  padding: 50px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+  max-width: 400px;
+  width: 90%;
+  border: 1px solid #eee;
+  animation: slideUp 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.successIcon {
+  font-size: 4rem;
+  color: #111;
+  margin-bottom: 20px;
+}
+
+.successCard h2 {
+  font-family: 'Open Sans', sans-serif;
+  letter-spacing: 2px;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.successCard p {
+  color: #666;
+  font-size: 0.9rem;
+  margin-bottom: 30px;
+}
+
+.closeBtn {
+  background: #111;
+  color: #fff;
+  border: none;
+  padding: 12px 30px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closeBtn:hover {
+  background: #444;
+}
+
+/* Loader Styling */
+.loader {
+  width: 50px;
+  height: 50px;
+  border: 3px solid #eee;
+  border-top-color: #111;
+  border-radius: 50%;
+  animation: spin 1s infinite linear;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes slideUp { from { transform: translateY(50px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }

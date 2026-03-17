@@ -6,7 +6,7 @@ const Navbar = () => {
 
   return (
     <nav className={styles.navContainer}>
-      {/* 1. Logo (Mobile par ab ye Left mein dikhega) */}
+      {/* 1. Logo */}
       <div className={styles.logoContainer}>
         <img src="/re-chlogo.png" alt="Logo" className={styles.logoImg} />
       </div>
@@ -21,21 +21,18 @@ const Navbar = () => {
         <li onClick={() => setIsOpen(false)}>CONTACT</li>
       </ul>
 
-      {/* 3. Email & Arrow (Desktop par Right mein) */}
-      <div className={`${styles.emailContainer} ${styles.hideMobile}`}>
-        {/* Navbar.jsx mein ye change karein */}
-<a href="mailto:farhanbaber965@gmail.com" className={`${styles.emailContainer} ${styles.hideMobile}`}>
-  <div className={styles.emailText}>
-    <span>FARHANBABER965</span>
-    <span>@GMAIL.COM</span>
-  </div>
-  <div className={styles.arrowWrapper}>
-    <span className={styles.arrow}>↗</span>
-  </div>
-</a>
-      </div>
+      {/* 3. Email Link */}
+      <a href="mailto:farhanbaber965@gmail.com" className={`${styles.emailContainer} ${styles.hideMobile}`}>
+        <div className={styles.emailText}>
+          <span>FARHANBABER965</span>
+          <span>@GMAIL.COM</span>
+        </div>
+        <div className={styles.arrowWrapper}>
+          <span className={styles.arrow}>↗</span>
+        </div>
+      </a>
 
-      {/* 4. Hamburger (Mobile par ab ye Right mein dikhega) */}
+      {/* 4. Hamburger */}
       <div 
         className={`${styles.hamburger} ${isOpen ? styles.active : ''}`} 
         onClick={() => setIsOpen(!isOpen)}

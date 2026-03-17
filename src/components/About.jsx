@@ -5,17 +5,13 @@ const About = () => {
   return (
     <section className={styles.aboutSection}>
       <div className={styles.container}>
-        
-        {/* Left Side: Everything inside the Bordered Frame */}
         <div className={styles.imageSide}>
           <div className={styles.largeFrame}>
             <div className={styles.imageWrapper}>
               <img src="/mypic.jpeg" alt="Farhan Baber" className={styles.profileImg} />
             </div>
-            
             <div className={styles.nameBadgeWrapper}>
               <h4 className={styles.userName}>M FARHAN BABER</h4>
-              
               <div className={styles.statusBadge}>
                 <span>Available for Work</span>
                 <div className={styles.pulseContainer}>
@@ -29,26 +25,22 @@ const About = () => {
           </div>
         </div>
 
-        {/* Right Side: Content */}
         <div className={styles.contentSide}>
           <h3 className={styles.introHeading}>
             Farhan Baber is a <span className={styles.skillBox}>Full Stack Engineer</span> 
             who is evolving into a <span className={styles.skillBox}>Software Engineer</span> 
             and pioneering in <span className={styles.skillBox}>AI Agents</span>
           </h3>
-          
           <p className={styles.description}>
             I am a dedicated professional with a deep-rooted passion for architecting 
             robust, scalable digital systems. My journey involves bridging the gap between 
             complex backend logic and intuitive user experiences.
           </p>
-
-          {/* Naya Paragraph Internships aur IT experience ke liye */}
           <p className={styles.description}>
             I have extensive experience working in the IT sector, specifically focusing on 
             Frontend technologies and Web Development. I have successfully completed 
-            internships at <span className={styles.highlight}>Certura</span> ,
-            <span className={styles.highlight}> Code Alpha</span> and  <span className={styles.highlight}> smit</span> where I honed my skills 
+            internships at <span className={styles.highlight}>Certura</span>, 
+            <span className={styles.highlight}>Code Alpha</span> and <span className={styles.highlight}>smit</span> where I honed my skills 
             in building modern, responsive digital solutions.
           </p>
 
@@ -62,7 +54,7 @@ const About = () => {
 
       <div className={styles.buttonFullCenter}>
         <button className={styles.exploreBtn}>
-           EXPLORE MY PROJECTS <i class="fa-solid fa-arrow-right"></i>
+           EXPLORE MY PROJECTS <i className="fa-solid fa-arrow-right"></i>
            <div className={styles.outerBorder}></div>
         </button>
       </div>
