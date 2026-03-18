@@ -92,7 +92,7 @@
   flex-shrink: 0;
 }
 
-/* --- MEDIA QUERIES --- */
+/* --- MEDIA QUERIES (Mobile Fixes) --- */
 
 @media (max-width: 768px) {
   .heroCard {
@@ -107,31 +107,44 @@
     font-size: clamp(2.5rem, 10vw, 4rem);
   }
 
-  /* Dev Title Font Fix */
   .devmain {
     font-family: 'Edu AU VIC WA NT Arrows', cursive !important;
     font-size: clamp(1.2rem, 6vw, 2.2rem);
     font-weight: 800;
   }
 
+  /* Skill Bar Container for Mobile */
   .skillBar {
-    gap: 15px;
+    display: flex !important;
+    flex-direction: column !important; /* Items ek ke niche ek */
+    gap: 15px !important;
     margin-top: 30px;
-    flex-direction: column;
     align-items: center;
   }
 
-  /* --- DOT ON LEFT FIX --- */
+  /* Har Skill Item ki alignment (Start Dot Fix) */
   .skillItem {
-    flex-direction: row !important; /* Row-reverse hata diya, ab Dot LEFT par hai */
-    gap: 10px !important;
-    width: 100%;
+    display: flex !important;
+    flex-direction: row !important; /* Dot LEFT, Text RIGHT */
     justify-content: center;
+    align-items: center;
+    gap: 12px !important; /* Dot aur Text ke darmiyan gap */
+    width: 100%;
   }
 
   .dot {
     width: 6px;
     height: 6px;
     background-color: #ccc !important;
+    order: -1; /* Isay hamesha start mein rakhta hai */
+    margin: 0;
+  }
+}
+
+/* Landscape Mode Fix */
+@media (max-height: 500px) {
+  .heroCard {
+    min-height: 100vh;
+    padding: 40px 20px;
   }
 }
