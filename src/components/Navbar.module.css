@@ -38,7 +38,7 @@
   height: 38px;
 }
 
-/* --- LINKS & HOVER ANIMATION --- */
+/* --- DESKTOP LINKS --- */
 .navLinks {
   display: flex;
   list-style: none;
@@ -66,7 +66,7 @@
   color: #000;
 }
 
-/* --- THE LINE ANIMATION --- */
+/* Hover Line Animation */
 .navLinks li::after {
   content: "";
   position: absolute;
@@ -125,52 +125,78 @@
 }
 
 /* --- MOBILE RESPONSIVE --- */
+
 @media (max-width: 900px) {
   .navLinks { display: none; }
 }
 
 @media (max-width: 768px) {
-  .navContainer { height: 70px; padding: 0 20px; }
+  .navContainer { 
+    height: 70px; 
+    padding: 0 25px; 
+  }
+
   .hideMobile { display: none !important; }
 
+  /* Hamburger Styling */
   .hamburger {
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    justify-content: center;
+    gap: 6px;
     cursor: pointer;
-    order: 2;
+    z-index: 11000; /* Isay links se bhi upar rakha hai */
+    width: 30px;
+    height: 30px;
   }
-
-  .logoContainer { order: 1; }
 
   .bar {
-    width: 22px;
+    width: 25px;
     height: 2px;
     background-color: black;
-    transition: 0.3s;
+    transition: all 0.3s ease-in-out;
   }
 
+  /* Hamburger Animation to "X" */
+  .active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .active .bar:nth-child(2) {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  .active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  /* Mobile Sidebar Menu */
   .navLinks {
     display: flex !important;
     position: fixed;
     top: 0;
     right: -100%;
-    width: 75%;
+    width: 100%; /* Full screen width for cleaner look */
     height: 100vh;
     background: white;
     flex-direction: column;
-    padding-top: 100px;
-    transition: 0.4s ease-in-out;
-    box-shadow: -10px 0 30px rgba(0,0,0,0.1);
-    z-index: 10001;
+    justify-content: center; /* Links ab center mein honge */
+    align-items: center;
+    gap: 30px;
+    transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+    z-index: 10500;
   }
 
-  .navLinks.openMenu { right: 0; }
-  
-  /* Link line animation for mobile menu too */
-  .navLinks li { margin-bottom: 20px; }
+  .navLinks.openMenu {
+    right: 0;
+  }
 
-  .active .bar:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-  .active .bar:nth-child(2) { opacity: 0; }
-  .active .bar:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  .navLinks li {
+    margin: 0;
+    padding: 10px 0;
+  }
+
+  .navLinks li a {
+    font-size: 1.5rem; /* Mobile par bare links ache lagte hain */
+    color: #1a1a1a;
+  }
 }
