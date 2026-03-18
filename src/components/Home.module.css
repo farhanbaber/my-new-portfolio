@@ -1,3 +1,5 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Arrows:wght@400..700&display=swap');
 .heroWrapper {
   padding: 0 5% 20px 5%;
   background-color: white;
@@ -16,7 +18,7 @@
   min-height: 70vh;
   position: relative;
   text-align: center;
-  overflow: hidden; /* Prevent horizontal scroll on mobile */
+  overflow: hidden;
 }
 
 /* --- Main Headings --- */
@@ -49,12 +51,12 @@
   min-width: 30px;
 }
 
-.devTitle {
+/* Yahan aapka naam .devmain tha */
+.devmain {
   font-size: clamp(1.4rem, 7vw, 7rem);
   font-weight: 800;
   margin: 0;
   letter-spacing: -1px;
-  /* Font Locked */
   font-family: "Edu AU VIC WA NT Arrows", cursive;
   color: #1a1a1a;
   white-space: nowrap;
@@ -90,9 +92,9 @@
   flex-shrink: 0;
 }
 
-/* --- MEDIA QUERIES (THE FIXES) --- */
+/* --- MEDIA QUERIES (768px tak extend kar diya taake tablets/bari screen par bhi dots set rahein) --- */
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   .heroCard {
     padding: 50px 15px;
     border-radius: 20px;
@@ -109,8 +111,8 @@
     gap: 8px; 
   }
 
-  /* Dev Title Fix for Mobile */
-  .devTitle {
+  /* FIX 1: Dev Title Font (Class name corrected to .devmain) */
+  .devmain {
     font-family: "Edu AU VIC WA NT Arrows", cursive !important;
     font-size: clamp(1.2rem, 6vw, 2.2rem);
     font-weight: 800;
@@ -124,17 +126,21 @@
   .skillBar {
     gap: 15px;
     margin-top: 30px;
+    flex-direction: column; /* Mobile par list ki tarah dikhay */
+    align-items: center;
   }
 
-  /* --- DOT ON RIGHT FIX --- */
+  /* FIX 2: DOT ON RIGHT (row-reverse forced with !important) */
   .skillItem {
-    flex-direction: row-reverse; /* Text pehle, Dot baad mein (Right par) */
-    gap: 8px;
+    flex-direction: row-reverse !important; 
+    gap: 12px !important;
+    width: fit-content;
   }
 
   .dot {
     width: 6px;
     height: 6px;
+    background-color: #ccc !important;
   }
 }
 

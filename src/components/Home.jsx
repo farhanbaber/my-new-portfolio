@@ -8,7 +8,7 @@ const Hero = () => {
         <h1 className={styles.mainTitle}>SOFTWARE</h1>
         <div className={styles.subHeader}>
           <div className={styles.line}></div>
-          <h2 className={styles.devTitle}>ARCHITECT</h2>
+          <h2 className={styles.devmain}>ARCHITECT</h2>
         </div>
 
         {/* Professional Skill Bar */}
