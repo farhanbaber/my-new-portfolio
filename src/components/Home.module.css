@@ -1,6 +1,8 @@
 .heroWrapper {
   padding: 0 5% 20px 5%;
   background-color: white;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .heroCard {
@@ -14,12 +16,11 @@
   min-height: 70vh;
   position: relative;
   text-align: center;
-  overflow: hidden; /* Mobile overflow control */
+  overflow: hidden; /* Prevent horizontal scroll on mobile */
 }
 
 /* --- Main Headings --- */
 .mainTitle {
-  /* iPhone X aur mini devices ke liye 2.8rem se start kiya hai */
   font-size: clamp(2.8rem, 12vw, 11rem);
   font-weight: 900;
   margin: 0;
@@ -37,16 +38,15 @@
   gap: 15px;
   margin-top: 15px;
   width: 100%;
-  flex-wrap: nowrap; /* Line aur text ko sath rakhne ke liye */
+  flex-wrap: nowrap;
 }
 
-/* Line Fix: Taaki choti screen par gayab na ho */
 .line {
   height: 3px;
   background-color: #1a1a1a;
-  flex-shrink: 0; /* Isse line squeeze nahi hogi */
+  flex-shrink: 0;
   width: 15%; 
-  min-width: 30px; /* Software ke sath wali line hamesha dikhegi */
+  min-width: 30px;
 }
 
 .devTitle {
@@ -54,12 +54,13 @@
   font-weight: 800;
   margin: 0;
   letter-spacing: -1px;
+  /* Font Locked */
   font-family: "Edu AU VIC WA NT Arrows", cursive;
   color: #1a1a1a;
   white-space: nowrap;
 }
 
-/* --- Skill Bar: Dots on Left Alignment --- */
+/* --- Skill Bar --- */
 .skillBar {
   display: flex;
   justify-content: center;
@@ -67,16 +68,15 @@
   gap: 25px;
   margin-top: 40px;
   color: #888;
-  flex-wrap: wrap; /* Mobiles par items automatically adjust honge */
+  flex-wrap: wrap; 
   width: 100%;
-    font-family: "Cinzel", serif;
-
+  font-family: "Cinzel", serif;
 }
 
 .skillItem {
   display: flex;
   align-items: center;
-  gap: 10px; /* Dot aur Text ke darmiyan gap */
+  gap: 10px;
   font-family: "Cinzel", serif;
   font-weight: 600;
   font-size: clamp(0.75rem, 2vw, 1.1rem);
@@ -87,10 +87,11 @@
   height: 7px;
   background-color: #ccc;
   border-radius: 50%;
-  flex-shrink: 0; /* Dot ko gol rehne dega, dabne nahi dega */
+  flex-shrink: 0;
 }
 
-/* --- Specific Fix for iPhone X, SE & Small Mobiles --- */
+/* --- MEDIA QUERIES (THE FIXES) --- */
+
 @media (max-width: 480px) {
   .heroCard {
     padding: 50px 15px;
@@ -99,22 +100,41 @@
   }
 
   .mainTitle {
-    letter-spacing: -1px; /* Mobile par clean look ke liye */
+    letter-spacing: -1px; 
     line-height: 1;
+    font-size: clamp(2.5rem, 10vw, 4rem);
   }
 
   .subHeader {
-    gap: 8px; /* Choti screen par gap kam */
+    gap: 8px; 
+  }
+
+  /* Dev Title Fix for Mobile */
+  .devTitle {
+    font-family: "Edu AU VIC WA NT Arrows", cursive !important;
+    font-size: clamp(1.2rem, 6vw, 2.2rem);
+    font-weight: 800;
   }
 
   .line {
     height: 2px;
-    min-width: 25px; /* Mazeed choti screen par bhi line dikhegi */
+    min-width: 25px; 
   }
 
   .skillBar {
     gap: 15px;
     margin-top: 30px;
+  }
+
+  /* --- DOT ON RIGHT FIX --- */
+  .skillItem {
+    flex-direction: row-reverse; /* Text pehle, Dot baad mein (Right par) */
+    gap: 8px;
+  }
+
+  .dot {
+    width: 6px;
+    height: 6px;
   }
 }
 

@@ -1,0 +1,26 @@
+.cursor {
+  width: 20px;
+  height: 20px;
+  background-color: #d3d3d3; /* Light Grey Color */
+  border-radius: 50%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  
+  /* Pointer events none zaroori hai taake click masla na kare */
+  pointer-events: none;
+  z-index: 999999;
+  
+  /* Transform-center fixing */
+  margin-left: -10px;
+  margin-top: -10px;
+
+  /* Smoothness settings */
+  transition: transform 0.1s ease-out; /* Yehi wo "Makkhan" effect hai */
+  will-change: transform;
+}
+
+/* Mobile par chupa do */
+@media (max-width: 768px) {
+  .cursor { display: none; }
+}

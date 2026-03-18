@@ -1,4 +1,30 @@
 /* 1. Hero Entrance (The Bhooom Effect) */
+/* Poori website par asli mouse gayab */
+
+html {
+  scroll-behavior: smooth !important;
+}
+
+/* Navbar ki height ke barabar offset taake section chhupe na */
+[id] {
+  scroll-margin-top: 90px;
+}
+
+* {
+  cursor: none !important;
+}
+
+html, body {
+  cursor: none !important;
+  height: 100%;
+}
+
+/* Links aur buttons par bhi gayab */
+a, button, li, input, textarea, [role="button"] {
+  cursor: none !important;
+}
+
+
 .hero-reveal {
   animation: heroBhoom 1.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   /* Starting point for animation */
@@ -41,3 +67,5 @@
   from { opacity: 0; transform: translateY(30px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
+/* Taake section Navbar ke exact niche rukay */

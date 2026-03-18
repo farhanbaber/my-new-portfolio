@@ -1,24 +1,40 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import styles from './Navbar.module.css';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
-    <nav className={styles.navContainer}>
+    <nav className={`${styles.navContainer} ${scrolled ? styles.scrolled : ''}`}>
+      
       {/* 1. Logo */}
       <div className={styles.logoContainer}>
-        <img src="/re-chlogo.png" alt="Logo" className={styles.logoImg} />
+        <a href="#HOME">
+          <img src="/re-chlogo.png" alt="Logo" className={styles.logoImg} />
+        </a>
       </div>
 
-      {/* 2. Navigation Links */}
+      {/* 2. Navigation Links with Hover Animation */}
       <ul className={`${styles.navLinks} ${isOpen ? styles.openMenu : ''}`}>
-        <li onClick={() => setIsOpen(false)}>HOME</li>
-        <li onClick={() => setIsOpen(false)}>ABOUT</li>
-        <li onClick={() => setIsOpen(false)}>RESUME</li>
-        <li onClick={() => setIsOpen(false)}>PROJECT</li>
-        <li onClick={() => setIsOpen(false)}>SERVICE</li>
-        <li onClick={() => setIsOpen(false)}>CONTACT</li>
+        <li><a href="#HOME" onClick={() => setIsOpen(false)}>HOME</a></li>
+        <li><a href="#ABOUT" onClick={() => setIsOpen(false)}>ABOUT</a></li>
+        <li><a href="#RESUME" onClick={() => setIsOpen(false)}>RESUME</a></li>
+        <li><a href="#PROJECT" onClick={() => setIsOpen(false)}>PROJECT</a></li>
+        <li><a href="#SERVICE" onClick={() => setIsOpen(false)}>SERVICE</a></li>
+        <li><a href="#CONTACT" onClick={() => setIsOpen(false)}>CONTACT</a></li>
       </ul>
 
       {/* 3. Email Link */}
