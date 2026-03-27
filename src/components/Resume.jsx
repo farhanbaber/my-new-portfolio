@@ -78,7 +78,7 @@ const Resume = () => {
         </div>
 
         <div className={styles.buttonFullCenter}>
-          <a href="/cv.pdf" download="Farhan_Baber_CV.pdf" className={styles.exploreBtn}>
+          <a href="resume.png" download="Farhan_Baber_CV.pdf" className={styles.exploreBtn}>
             DOWNLOAD CV <FaDownload style={{marginLeft: '10px'}} />
             <div className={styles.outerBorder}></div>
           </a>

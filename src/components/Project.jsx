@@ -30,7 +30,8 @@ const ProjectSection = () => {
   ];
 
   return (
-    <section className={styles.projectSection}>
+    // Yahan ID add kar di hai
+    <section id="projects-section" className={styles.projectSection}>
       <div className={styles.headerArea}>
         <p className={styles.subHeading}>Curated Portfolio</p>
         <h2 className={`${styles.mainTitle} ${styles.portfolioTitle}`}>
@@ -75,7 +76,6 @@ const ProjectSection = () => {
                 <div className={styles.content}>
                   <h3>{project.title}</h3>
                   <p>{project.desc}</p>
-                  {/* Redirecting to farhanbaber repository link */}
                   <a 
                     href={`https://github.com/farhanbaber/${project.name}`} 
                     target="_blank" 

@@ -81,10 +81,17 @@ const Services = () => {
           <div className={styles.trustFooter}>
             <p>Pushing the boundaries of digital excellence.</p>
             <div className={styles.btnWrapper}>
-              <button className={styles.exploreBtn}>
-                <span className={styles.btnText}>INITIATE PROJECT</span>
-                <span className={styles.btnOverlay}></span>
-              </button>
+           <a 
+  href="https://github.com/farhanbaber" 
+  target="_blank" 
+  rel="noopener noreferrer" 
+  style={{ textDecoration: 'none' }}
+>
+  <button className={styles.exploreBtn}>
+    <span className={styles.btnText}>INITIATE PROJECT</span>
+    <span className={styles.btnOverlay}></span>
+  </button>
+</a>
             </div>
           </div>
         </div>

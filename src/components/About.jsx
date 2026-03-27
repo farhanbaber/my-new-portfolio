@@ -53,10 +53,12 @@ const About = () => {
       </div>
 
       <div className={styles.buttonFullCenter}>
-        <button className={styles.exploreBtn}>
-           EXPLORE MY PROJECTS <i className="fa-solid fa-arrow-right"></i>
-           <div className={styles.outerBorder}></div>
-        </button>
+  <a href="#projects-section" style={{ textDecoration: 'none' }}>
+  <button className={styles.exploreBtn}>
+    EXPLORE MY PROJECTS <i className="fa-solid fa-arrow-right"></i>
+    <div className={styles.outerBorder}></div>
+  </button>
+</a>
       </div>
     </section>
   );
