@@ -1,6 +1,8 @@
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { EffectCoverflow, Navigation, Pagination, Autoplay } from 'swiper/modules';
+
+// Swiper Styles
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
@@ -10,7 +12,6 @@ import styles from './Project.module.css';
 import { FaExternalLinkAlt, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 
 const ProjectSection = () => {
-  // Mapping projects to your exact GitHub repository names
   const projects = [
     { name: "Gold-website", title: "Jewellers Hub", desc: "Luxury jewelry brand with premium interface.", img: "/gold-pro.png" },
     { name: "Ecommerce-Website", title: "Global Shop", desc: "Full-stack e-commerce solution with advanced filtering.", img: "/e-proj.png" },
@@ -30,7 +31,6 @@ const ProjectSection = () => {
   ];
 
   return (
-    // Yahan ID add kar di hai
     <section id="projects-section" className={styles.projectSection}>
       <div className={styles.headerArea}>
         <p className={styles.subHeading}>Curated Portfolio</p>
@@ -58,7 +58,8 @@ const ProjectSection = () => {
             disableOnInteraction: false,
             pauseOnMouseEnter: true,
           }}
-          speed={1500}
+          speed={1200} // Thoda fast transitions
+          watchSlidesProgress={true} // Performance boost
           pagination={{ clickable: true, dynamicBullets: true }}
           navigation={{
             nextEl: '.nextBtnCustom',
@@ -71,8 +72,17 @@ const ProjectSection = () => {
             <SwiperSlide key={index} className={styles.swiperSlide}>
               <div className={styles.card}>
                 <div className={styles.imageBox}>
-                  <img src={project.img} alt={project.title} loading="lazy" />
+                  {/* OPTIMIZATION: Pehli 3 images foran load hongi (Eager), baqi background mein (Lazy) */}
+                  <img 
+                    src={project.img} 
+                    alt={project.title} 
+                    loading={index < 3 ? "eager" : "lazy"} 
+                    onLoad={(e) => e.currentTarget.classList.add(styles.loaded)}
+                  />
+                  {/* Swiper's built-in loader */}
+                  <div className="swiper-lazy-preloader"></div>
                 </div>
+                
                 <div className={styles.content}>
                   <h3>{project.title}</h3>
                   <p>{project.desc}</p>
