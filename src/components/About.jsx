@@ -45,9 +45,9 @@ const About = () => {
           </p>
 
           <div className={styles.socialWrapper}>
-            <a href="#" className={styles.iconBox}><FaLinkedinIn /></a>
-            <a href="#" className={styles.iconBox}><FaGithub /></a>
-            <a href="#" className={styles.iconBox}><FaWhatsapp /></a>
+            <a href="https://www.linkedin.com/in/farhan-b-417a5034b?utm_source=share_via&utm_content=profile&utm_medium=member_ios" className={styles.iconBox}><FaLinkedinIn /></a>
+            <a href="https://github.com/farhanbaber" className={styles.iconBox}><FaGithub /></a>
+            <a href="‎Let's chat on WhatsApp! It's fast, simple, secure messaging and calling for free. This invite expires soon. https://whatsapp.com/dl/" className={styles.iconBox}><FaWhatsapp /></a>
           </div>
         </div>
       </div>

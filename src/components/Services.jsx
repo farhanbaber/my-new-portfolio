@@ -35,10 +35,26 @@ const Services = () => {
     { plan: "Elite", price: "$499", features: ["Custom Enterprise App", "Cloud Deployment", "Advanced Security", "Lifetime Support"] }
   ];
 
+  // UPDATED: 3 Different Clients with specific details
   const testimonials = [
-    { name: "Sarah Khan", role: "Direct Client", text: "Farhan transformed our vision into a high-end reality. The UI is beyond expectations!", img: "/client1.jpg" },
-    { name: "Sir Ahmed", role: "Mentor", text: "Outstanding technical grip on the MERN stack. His architectural logic is professional.", img: "/sir.jpg" },
-    { name: "Tech Team", role: "Collaborator", text: "A great team player with amazing software development skills. Highly recommended!", img: "/team.jpg" }
+    { 
+      name: "Tatheer Husssain", 
+      role: "Ceo Tech4Edge", 
+      text: "Farhan's expertise in the MERN stack is exceptional. He delivered a complex dashboard ahead of schedule with flawless UI.", 
+      img: "/cl-2.jpeg" 
+    },
+    { 
+      name: "Ramsha Baber", 
+      role: "Doctor of Physiotherapy", 
+      text : "Farhan delivered a premium digital identity for my practice. The clean, professional interface built instant trust with my patients.", 
+      img: "/cl-1.jpeg" 
+    },
+    { 
+      name: "Fayaz Baber", 
+      role: "Gold Smith", 
+      text: "Farhan transformed our brand into a digital masterpiece. The luxury gold-themed design and smooth animations perfectly reflect the elegance of our jewelry.", 
+      img: "/cl-3.jpeg" 
+    }
   ];
 
   return (
@@ -50,9 +66,6 @@ const Services = () => {
             <span className={styles.badge}>Expertise & Solutions</span>
             <h2 className={styles.title}>Premium <span>Services</span></h2>
           </div>
-
-          
-          
 
           <div className={styles.grid}>
             {servicesData.map((service, index) => (
@@ -77,7 +90,7 @@ const Services = () => {
         </div>
       </section>
 
-      {/* --- SECTION 2: PRICING (Light Grey Cards, White BG) --- */}
+      {/* --- SECTION 2: PRICING --- */}
       <section className={styles.pricingSection}>
         <div className={styles.container}>
           <div className={styles.header}>
@@ -102,7 +115,7 @@ const Services = () => {
         </div>
       </section>
 
-      {/* --- SECTION 3: TESTIMONIALS (2 on Laptop, 1 on Mobile) --- */}
+      {/* --- SECTION 3: TESTIMONIALS --- */}
       <section className={styles.testiSection}>
         <div className={styles.container}>
           <div className={styles.header}>
@@ -116,6 +129,7 @@ const Services = () => {
               spaceBetween={20}
               slidesPerView={1}
               breakpoints={{
+                // Laptop par 2 cards, Mobile par 1
                 1024: { slidesPerView: 2, spaceBetween: 40 },
               }}
               loop={true}
@@ -144,9 +158,9 @@ const Services = () => {
             
             {/* Swiper Controls */}
             <div className={styles.swiperControls}>
-              <div className="testiPrev"><FaChevronLeft /></div>
+              <div className={`testiPrev ${styles.navBtn}`}><FaChevronLeft /></div>
               <div className="custom-dots"></div>
-              <div className="testiNext"><FaChevronRight /></div>
+              <div className={`testiNext ${styles.navBtn}`}><FaChevronRight /></div>
             </div>
           </div>
         </div>

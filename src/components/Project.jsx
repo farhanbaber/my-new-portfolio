@@ -10,34 +10,33 @@ import styles from './Project.module.css';
 import { FaExternalLinkAlt, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 
 const ProjectSection = () => {
-  // 15 top-tier projects (Tumhare repos se select kiye hain)
+  // Mapping projects to your exact GitHub repository names
   const projects = [
-    { name: "Gold-website", title: "Fayaz Jewellers", desc: "Luxury jewelry brand with premium interface.", img: "/fayaz.jpg" },
-    { name: "Ecommerce-Website", title: "Global Shop", desc: "Full-stack e-commerce solution with advanced filtering.", img: "/ecommerce.jpg" },
-    { name: "My-portfolio", title: "Portfolio", desc: "My professional portfolio showcasing Curated Work.", img: "/portfolio.jpg" },
-    { name: "Wedding-Nasheed", title: "WeddingNasheed", desc: "Responsive platform for traditional Islamic Nasheeds.", img: "/nasheed.jpg" },
-    { name: "student-portal", title: "SMIT Portal", desc: "Advanced MERN stack management system.", img: "/portal.jpg" },
-    { name: "full-stack-app", title: "Full Stack App", desc: "Complete robust application with modern stack.", img: "/app.jpg" },
-    { name: "cars-website", title: "Cars Hub", desc: "Dynamic automobile marketplace with smart filtering.", img: "/cars.jpg" },
-    { name: "AI-Assitant", title: "Nova AI", desc: "Voice-enabled AI assistant for real-time automation.", img: "/ai.jpg" },
-    { name: "meta-Ai-project", title: "Meta Vision", desc: "Next-gen social layout with media processing.", img: "/meta.jpg" },
-    { name: "Kbiz.com", title: "Kbiz Corporate", desc: "Corporate solution for business management.", img: "/kbiz.jpg" },
-    { name: "Codanix-project", title: "Codanix Solutions", desc: "Premium tech agency service showcase platform.", img: "/codanix.jpg" },
-    { name: "Image-slider", title: "Smooth Slider", desc: "Custom animated image slider with transitions.", img: "/slider.jpg" },
-    { name: "Typing-Speed-", title: "Speed Typer", desc: "Interactive tool to test and improve typing speed.", img: "/typing.jpg" },
-    { name: "Text-to-Speech-Converter", title: "Speech Lab", desc: "Modern utility for voice conversion and synthesis.", img: "/speech.jpg" },
-    { name: "Netfilx-clone", title: "Netflix Clone", desc: "Visual replica of the famous streaming service UI.", img: "/netflix.jpg" }
+    { name: "Gold-website", title: "Jewellers Hub", desc: "Luxury jewelry brand with premium interface.", img: "/gold-pro.png" },
+    { name: "Ecommerce-Website", title: "Global Shop", desc: "Full-stack e-commerce solution with advanced filtering.", img: "/e-proj.png" },
+    { name: "Qr-Code-Generator", title: "Qr Code Generator", desc: "Professional tool for generating custom QR codes.", img: "/qr-proj.png" },
+    { name: "Wedding-Nasheed", title: "WeddingNasheed", desc: "Responsive platform for traditional Islamic Nasheeds.", img: "/wed-proj.png" },
+    { name: "student-portal", title: "Student Portal", desc: "Advanced MERN stack management system.", img: "/portal-proj.png" },
+    { name: "full-stack-app", title: "Full Stack App", desc: "Complete robust application with modern stack.", img: "/mern-proj.png" },
+    { name: "cars-website", title: "Cars Hub", desc: "Dynamic automobile marketplace with smart filtering.", img: "/cars-proj.png" },
+    { name: "AI-Assitant-Nova", title: "Nova AI", desc: "Voice-enabled AI assistant for real-time automation.", img: "/ai-proj.png" },
+    { name: "meta-Ai-project", title: "Meta Vision", desc: "Next-gen social layout with media processing.", img: "/meta-proj.png" },
+    { name: "Kbiz.com", title: "Kbiz Corporate", desc: "Corporate solution for business management.", img: "/kbiz.proj.png" },
+    { name: "Codanix-project", title: "Codanix Solutions", desc: "Premium tech agency service showcase platform.", img: "/codanix.proj.png" },
+    { name: "Image-slider", title: "Smooth Slider", desc: "Custom animated image slider with transitions.", img: "/img-sli-proj.png" },
+    { name: "Typing-Speed-Test", title: "Speed Typer", desc: "Interactive tool to test and improve typing speed.", img: "/typing-proj.png" },
+    { name: "Text-to-Speech-Converter", title: "Speech Lab", desc: "Modern utility for voice conversion and synthesis.", img: "/text-speech-proj.png" },
+    { name: "Netfilx-clone", title: "Netflix Clone", desc: "Visual replica of the famous streaming service UI.", img: "/net-flix.png" }
   ];
 
   return (
     <section className={styles.projectSection}>
- <div className={styles.headerArea}>
-  <p className={styles.subHeading}>Curated Portfolio</p>
-  {/* Yahan maine "portfolioTitle" ki extra class add ki hai */}
-  <h2 className={`${styles.mainTitle} ${styles.portfolioTitle}`}>
-    Featured <span className={styles.mainspan}>Masterpieces</span>
-  </h2>
-</div>
+      <div className={styles.headerArea}>
+        <p className={styles.subHeading}>Curated Portfolio</p>
+        <h2 className={`${styles.mainTitle} ${styles.portfolioTitle}`}>
+          Featured <span className={styles.mainspan}>Masterpieces</span>
+        </h2>
+      </div>
 
       <div className={styles.swiperContainer}>
         <Swiper
@@ -48,17 +47,17 @@ const ProjectSection = () => {
           slidesPerView={'auto'}
           coverflowEffect={{
             rotate: 0,
-            stretch: -20, 
+            stretch: -20,
             depth: 150,
             modifier: 2,
             slideShadows: false,
           }}
           autoplay={{
-            delay: 3500, // Slowed down for luxury feel
+            delay: 3500,
             disableOnInteraction: false,
-            pauseOnMouseEnter: true, // HOVER PAR RUK JAYEGA
+            pauseOnMouseEnter: true,
           }}
-          speed={1500} // Extra smooth transition speed
+          speed={1500}
           pagination={{ clickable: true, dynamicBullets: true }}
           navigation={{
             nextEl: '.nextBtnCustom',
@@ -76,7 +75,13 @@ const ProjectSection = () => {
                 <div className={styles.content}>
                   <h3>{project.title}</h3>
                   <p>{project.desc}</p>
-                  <a href={`https://github.com/farhanbaber/${project.name}`} target="_blank" rel="noreferrer" className={styles.actionBtn}>
+                  {/* Redirecting to farhanbaber repository link */}
+                  <a 
+                    href={`https://github.com/farhanbaber/${project.name}`} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className={styles.actionBtn}
+                  >
                     EXPLORE <FaExternalLinkAlt />
                   </a>
                 </div>
