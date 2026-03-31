@@ -17,7 +17,7 @@ import {
   HiOutlineDatabase,
   HiOutlineCheckCircle
 } from "react-icons/hi";
-import { FaChevronLeft, FaChevronRight, FaQuoteLeft } from "react-icons/fa";
+import { FaChevronLeft, FaChevronRight, FaQuoteLeft, FaLinkedin } from "react-icons/fa";
 
 const Services = () => {
   const servicesData = [
@@ -35,25 +35,28 @@ const Services = () => {
     { plan: "Elite", price: "$499", features: ["Custom Enterprise App", "Cloud Deployment", "Advanced Security", "Lifetime Support"] }
   ];
 
-  // UPDATED: 3 Different Clients with specific details
+  // Yahan har client ka apna unique LinkedIn link add karein
   const testimonials = [
     { 
       name: "Tatheer Husssain", 
       role: "Ceo Tech4Edge", 
       text: "Farhan's expertise in the MERN stack is exceptional. He delivered a complex dashboard ahead of schedule with flawless UI.", 
-      img: "/cl-2.jpeg" 
+      img: "/cl-2.jpeg",
+      linkedin: "https://www.linkedin.com/in/tatheer-hussain?utm_source=share_via&utm_content=profile&utm_medium=member_ios" 
     },
     { 
       name: "Ramsha Baber", 
       role: "Doctor of Physiotherapy", 
       text : "Farhan delivered a premium digital identity for my practice. The clean, professional interface built instant trust with my patients.", 
-      img: "/cl-1.jpeg" 
+      img: "/cl-1.jpeg",
+      linkedin: "https://www.linkedin.com/in/dr-ramsha-fayaz-331613363?utm_source=share_via&utm_content=profile&utm_medium=member_ios" 
     },
     { 
       name: "Fayaz Baber", 
       role: "Gold Smith", 
       text: "Farhan transformed our brand into a digital masterpiece. The luxury gold-themed design and smooth animations perfectly reflect the elegance of our jewelry.", 
-      img: "/cl-3.jpeg" 
+      img: "/cl-3.jpeg",
+      linkedin: "https://www.linkedin.com/in/fayaz-baber" 
     }
   ];
 
@@ -81,17 +84,17 @@ const Services = () => {
           <div className={styles.trustFooter}>
             <p>Pushing the boundaries of digital excellence.</p>
             <div className={styles.btnWrapper}>
-           <a 
-  href="https://github.com/farhanbaber" 
-  target="_blank" 
-  rel="noopener noreferrer" 
-  style={{ textDecoration: 'none' }}
->
-  <button className={styles.exploreBtn}>
-    <span className={styles.btnText}>INITIATE PROJECT</span>
-    <span className={styles.btnOverlay}></span>
-  </button>
-</a>
+              <a 
+                href="https://github.com/farhanbaber" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                style={{ textDecoration: 'none' }}
+              >
+                <button className={styles.exploreBtn}>
+                  <span className={styles.btnText}>INITIATE PROJECT</span>
+                  <span className={styles.btnOverlay}></span>
+                </button>
+              </a>
             </div>
           </div>
         </div>
@@ -136,7 +139,6 @@ const Services = () => {
               spaceBetween={20}
               slidesPerView={1}
               breakpoints={{
-                // Laptop par 2 cards, Mobile par 1
                 1024: { slidesPerView: 2, spaceBetween: 40 },
               }}
               loop={true}
@@ -152,7 +154,18 @@ const Services = () => {
                     <FaQuoteLeft className={styles.quoteIcon} />
                     <p className={styles.testiText}>{t.text}</p>
                     <div className={styles.testiUser}>
-                      <img src={t.img} alt={t.name} className={styles.userImg} />
+                      {/* Image + LinkedIn Icon Container */}
+                      <div className={styles.clientImgBox}>
+                        <img src={t.img} alt={t.name} className={styles.userImg} />
+                        <a 
+                          href={t.linkedin} 
+                          target="_blank" 
+                          rel="noopener noreferrer" 
+                          className={styles.linkedinLink}
+                        >
+                          <FaLinkedin className={styles.linkedinIcon} />
+                        </a>
+                      </div>
                       <div className={styles.userInfo}>
                         <h5>{t.name}</h5>
                         <span>{t.role}</span>
@@ -163,7 +176,6 @@ const Services = () => {
               ))}
             </Swiper>
             
-            {/* Swiper Controls */}
             <div className={styles.swiperControls}>
               <div className={`testiPrev ${styles.navBtn}`}><FaChevronLeft /></div>
               <div className="custom-dots"></div>

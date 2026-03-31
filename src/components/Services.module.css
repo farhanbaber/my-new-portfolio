@@ -145,3 +145,47 @@
   border-radius: 0;          /* Agar iPhone isay round kar raha hai to */
   background-color: transparent; /* Taaki blue background khatam ho jaye */
 }
+
+.clientImgBox {
+  position: relative;
+  width: 65px; /* Image size ke mutabiq adjust karein */
+  height: 65px;
+}
+
+.userImg {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+.linkedinLink {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background: #ffffff; /* White background taake black icon nazar aaye */
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.linkedinIcon {
+  color: #000000; /* Pure Black Icon */
+  font-size: 14px;
+}
+
+.linkedinLink:hover {
+  transform: scale(1.1);
+  background: #000000;
+}
+
+.linkedinLink:hover .linkedinIcon {
+  color: #ffffff; /* Hover par reverse (luxury feel) */
+}
