@@ -41,6 +41,7 @@ const Resume = () => {
     { name: "GitHub", icon: <FaGithub style={{color: '#181717'}} /> },
     { name: "Git", icon: <FaGitAlt style={{color: '#F05032'}} /> },
     { name: "Bootstrap", icon: <SiBootstrap style={{color: '#7952B3'}} /> },
+    
   ];
 
   return (

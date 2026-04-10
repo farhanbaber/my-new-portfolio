@@ -26,7 +26,7 @@ const Hero = () => {
 
           <div className={styles.skillItem}>
             <span className={styles.dot}></span>
-            <span>UI/UX Designer</span>
+            <span>Creative Technologist</span>
           </div>
 
           <div className={styles.skillItem}>
